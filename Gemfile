@@ -8,26 +8,11 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
-<<<<<<< HEAD
-gem "font-awesome-rails"
-gem 'simple_form'
-gem 'sqlite3', '~> 1.3.6'
-gem 'geocoder'
-gem 'gmaps4rails'
-gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
-gem 'mail_form'
-gem 'figaro'
-gem "autoprefixer-rails"
-gem 'exception_notification'
-gem 'redcarpet'
-gem "unicode-display_width"
-=======
 gem 'pg'
 gem 'pg_search'
 gem 'devise'
 gem 'devise-i18n'
 gem 'roo-xls'
->>>>>>> master
 
 group :development, :test do
   gem 'byebug', platform: :mri
