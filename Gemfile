@@ -13,6 +13,7 @@ gem 'pg_search'
 gem 'devise'
 gem 'devise-i18n'
 gem 'roo-xls'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'byebug', platform: :mri
