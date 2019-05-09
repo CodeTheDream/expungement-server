@@ -23,7 +23,7 @@ gem 'redcarpet'
 gem "unicode-display_width"
 =======
 gem 'pg'
-gem 'pg-search'
+gem 'pg_search'
 gem 'devise'
 gem 'devise-i18n'
 gem 'roo-xls'
@@ -47,21 +47,7 @@ group :development do
   gem 'spring'
   gem 'rb-readline'
   gem 'spring-watcher-listen', '~> 2.0.0'
-<<<<<<< HEAD
-end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootsnap', '>= 1.1.0', require: false
-gem 'devise'
-gem 'devise-i18n'
-gem 'high_voltage'
-gem 'pundit'
-gem 'pg'
-gem 'pg_search'
-
-group :development do
-=======
->>>>>>> master
   gem 'better_errors'
   gem 'foreman'
   gem 'rails_layout'
