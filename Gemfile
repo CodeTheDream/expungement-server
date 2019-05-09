@@ -13,6 +13,9 @@ gem 'pg_search'
 gem 'devise'
 gem 'devise-i18n'
 gem 'roo-xls'
+gem 'bootsnap', require: false
+
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -40,6 +43,7 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'bootstrap-sass'
 
 group :test do
   gem 'capybara'
