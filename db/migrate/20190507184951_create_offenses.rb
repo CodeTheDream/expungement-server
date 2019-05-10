@@ -2,6 +2,7 @@ class CreateOffenses < ActiveRecord::Migration[5.2]
   def change
     create_table :offenses do |t|
       t.string :first_name
+      t.string :middle_name
       t.string :last_name
       t.string :gender
       t.string :race
@@ -11,9 +12,9 @@ class CreateOffenses < ActiveRecord::Migration[5.2]
       t.string :county
       t.string :state
       t.string :file_number
-      t.string :offenes_date
-      t.string :dispostition
-      t.string :dispostition_date
+      t.string :offense_date
+      t.string :disposition
+      t.string :disposition_date
       t.string :county_disposition
       t.string :arrest_agency_name
       t.string :arrest_agency_department
