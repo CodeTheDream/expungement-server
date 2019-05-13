@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_184951) do
+ActiveRecord::Schema.define(version: 2019_05_13_162626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_05_07_184951) do
     t.string "last_name"
     t.string "gender"
     t.string "race"
-    t.string "address"
+    t.string "address_number"
     t.string "street"
     t.integer "zip"
     t.string "county"
@@ -33,11 +33,14 @@ ActiveRecord::Schema.define(version: 2019_05_07_184951) do
     t.string "county_disposition"
     t.string "arrest_agency_name"
     t.string "arrest_agency_department"
-    t.string "arrest_agency_address"
+    t.string "arrest_agency_address_number"
     t.integer "arrest_agency_street"
-    t.string "arrest_agency_zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "dob"
+    t.string "offense_description"
+    t.string "arrest_date"
+    t.string "arrest_agency_zip"
   end
 
 end
