@@ -327,6 +327,7 @@ DEPENDENCIES
   rails-controller-testing
   rails_layout
   rb-readline
+  roo (~> 2.8.0)
   roo-xls
   rspec-rails
   rubocop
