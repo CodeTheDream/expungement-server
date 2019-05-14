@@ -14,7 +14,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'roo-xls'
 gem 'bootsnap', require: false
-
+gem 'turbolinks'
 
 
 group :development, :test do
