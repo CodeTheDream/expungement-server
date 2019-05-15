@@ -13,12 +13,12 @@ class OffenseImport
   end
 
   def open_spreadsheet
-    case File.Extname(file.original_filename)
-      when ".csv" then Csv.new(file.path, nil, :ignore)
-      when ".xls" then Roo::Excel.new(file.path)
-      when ".xlsx" then Roo::Excelx.new(file.path)
-      when ".ods" then Roo::OpenOffice.new(file.path)
-      else raise "Unknown file type: #{file.original_filename}"
+    case File.extname(file)  # took off `original_filename`
+    when ".csv" then Csv.new(file, nil, :ignore)
+    when ".xls" then Roo::Excel.new(file)
+    when ".xlsx" then Roo::Excelx.new(file)
+    when ".ods" then Roo::OpenOffice.new(file)
+    else raise "Unknown file type: #{file}"
     end
   end
 
