@@ -13,12 +13,12 @@ class OffenseImport
   end
 
   def open_spreadsheet
-    case File.extname(file)  # took off `original_filename`
+    case File.extname(file.original_filename)  # took off `original_filename`
     when ".csv" then Csv.new(file, nil, :ignore)
-    when ".xls" then Roo::Excel.new(file)
-    when ".xlsx" then Roo::Excelx.new(file)
-    when ".ods" then Roo::OpenOffice.new(file)
-    else raise "Unknown file type: #{file}"
+    when ".xls" then Roo::Excel.new(file.path)
+    when ".xlsx" then Roo::Excelx.new(file.path)
+    when ".ods" then Roo::OpenOffice.new(file.path)
+    else raise "Unknown file type: #{file.original_filename}"
     end
   end
 
@@ -27,7 +27,8 @@ class OffenseImport
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).map do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      offense = Offense.find_by_id(row["id"]) || Offense.new
+      puts "OFFENSE BY ID: #{row["File Number"]}"
+      offense = Offense.find_by_id(row["File Number"]) || Offense.new
       offense.file_number = row['File Number']
       offense.first_name = row['First Name']
       offense.middle_name = row['Middle Name']
