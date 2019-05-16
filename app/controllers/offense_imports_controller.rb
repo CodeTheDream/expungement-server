@@ -4,9 +4,9 @@ class OffenseImportsController < ApplicationController
   end
 
   def create
-    # byebug
     if params["offense_import"].present? && params["offense_import"]["file"].present?
-      @offense_import = OffenseImport.new(offense_import_params)
+      @offense_import = OffenseImport.new(original_filename: (params["offense_import"]["file"]).original_filename,
+        filepathname: (params["offense_import"]["file"]).path)
       if @offense_import.save
         redirect_to root_url
         flash[:success] = "Offenses uploaded successfully"
