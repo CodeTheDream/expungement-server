@@ -13,7 +13,7 @@ class OffenseImport
   end
 
   def open_spreadsheet
-    case File.extname(file.original_filename)  # took off `original_filename`
+    case File.extname(file.original_filename)  
     when ".csv" then Csv.new(file, nil, :ignore)
     when ".xls" then Roo::Excel.new(file.path)
     when ".xlsx" then Roo::Excelx.new(file.path)
@@ -27,8 +27,7 @@ class OffenseImport
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).map do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      puts "OFFENSE BY ID: #{row["File Number"]}"
-      offense = Offense.find_by_id(row["File Number"]) || Offense.new
+      offense = Offense.find_by_id(row["id"]) || Offense.new
       offense.file_number = row['File Number']
       offense.first_name = row['First Name']
       offense.middle_name = row['Middle Name']
@@ -61,6 +60,7 @@ class OffenseImport
   end
 
   def save
+    Offense.delete_all
     if imported_offenses.map(&:valid?).all?
       imported_offenses.each(&:save!)
       true

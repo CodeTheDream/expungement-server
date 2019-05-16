@@ -4,12 +4,18 @@ class OffenseImportsController < ApplicationController
   end
 
   def create
-    @offense_import = OffenseImport.new(offense_import_params)
-    if @offense_import.save
-      redirect_to root_url
-      flash[:success] = "Offenses uploaded successfully"
+    # byebug
+    if params["offense_import"].present? && params["offense_import"]["file"].present?
+      @offense_import = OffenseImport.new(offense_import_params)
+      if @offense_import.save
+        redirect_to root_url
+        flash[:success] = "Offenses uploaded successfully"
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to root_url
+      flash[:success] = "You need to choose a file first"
     end
   end
 
