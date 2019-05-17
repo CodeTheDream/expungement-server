@@ -2,7 +2,7 @@ class OffenseImport
   include ActiveModel::Model
   require 'roo'
 
-  attr_accessor :file
+  attr_accessor :original_filename, :filepathname
 
   def initialize(attributes={})
     attributes.each { |name, value| send("#{name}=", value) }
@@ -13,12 +13,12 @@ class OffenseImport
   end
 
   def open_spreadsheet
-    case File.extname(file)  # took off `original_filename`
-    when ".csv" then Csv.new(file, nil, :ignore)
-    when ".xls" then Roo::Excel.new(file)
-    when ".xlsx" then Roo::Excelx.new(file)
-    when ".ods" then Roo::OpenOffice.new(file)
-    else raise "Unknown file type: #{file}"
+    case File.extname(original_filename)
+    when ".csv" then Csv.new(filepathname, nil, :ignore)
+    when ".xls" then Roo::Excel.new(filepathname)
+    when ".xlsx" then Roo::Excelx.new(filepathname)
+    when ".ods" then Roo::OpenOffice.new(filepathname)
+    else raise "Unknown file type: #{original_filename}"
     end
   end
 
@@ -60,6 +60,7 @@ class OffenseImport
   end
 
   def save
+    Offense.delete_all
     if imported_offenses.map(&:valid?).all?
       imported_offenses.each(&:save!)
       true
