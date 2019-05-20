@@ -12,9 +12,10 @@ gem 'pg'
 gem 'pg_search'
 gem 'devise'
 gem 'devise-i18n'
+gem "roo", "~> 2.8.0"
 gem 'roo-xls'
-gem 'bootsnap', require: false
 gem 'turbolinks'
+gem 'bootsnap', require: false
 
 
 group :development, :test do
