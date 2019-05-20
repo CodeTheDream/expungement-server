@@ -5,7 +5,9 @@ class OffenseImport
   attr_accessor :original_filename, :filepathname
 
   def initialize(attributes={})
-    attributes.each { |name, value| send("#{name}=", value) }
+    # attributes.each { |name, value| send("#{name}=", value) }
+    @original_filename = attributes[:original_filename]
+    @filepathname = attributes[:filepathname]
   end
 
   def persisted?
