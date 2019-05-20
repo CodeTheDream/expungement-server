@@ -1,5 +1,5 @@
 
-filename = Rails.root.join('lib', 'seeds', 'offenses2.xlsx').to_s
+filename = Rails.root.join('lib', 'seeds', 'offenses.xlsx').to_s
 
 offense_import = OffenseImport.new(original_filename: filename, filepathname: filename)
 
