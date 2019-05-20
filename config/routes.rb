@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root 'offense_imports#new'
+  root 'offenses#index'
+  resources :offenses,  only: [:index, :new, :create]
+  devise_for :admin
   resources :offense_imports, only: [:new, :create]
 end
