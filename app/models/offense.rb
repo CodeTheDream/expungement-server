@@ -8,18 +8,17 @@ class Offense < ApplicationRecord
     arrest_agency = {name: self.arrest_agency_name, address: arrest_agency_address, date: self.arrest_date}
 
     offense_hash[:name] = name
-    offense_hash [:sex] = self.gender
+    offense_hash[:sex] = self.gender
     offense_hash[:race] = self.race
     offense_hash[:dob] = self.dob
     offense_hash[:address] = address
     offense_hash[:file_number] = self.file_number
     offense_hash[:offense_description] = self.offense_description
-    offense_hash[:offense_date] = self.offence_date
+    offense_hash[:offense_date] = self.offense_date
     offense_hash[:disposition] = self.disposition
     offense_hash[:disposition_date] = self.disposition_date
     offense_hash[:county_disposition] = self.county_disposition
     offense_hash[:arrest_agency] = arrest_agency
-    offense_hash
   end
   
 end
