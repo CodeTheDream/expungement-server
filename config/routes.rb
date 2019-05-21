@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'offenses#index'
+  resources :offenses,  only: [:index, :new, :create]
+  devise_for :admin
+  resources :offense_imports, only: [:new, :create]
 end

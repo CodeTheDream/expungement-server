@@ -12,9 +12,10 @@ gem 'pg'
 gem 'pg_search'
 gem 'devise'
 gem 'devise-i18n'
+gem "roo", "~> 2.8.0"
 gem 'roo-xls'
+gem 'turbolinks'
 gem 'bootsnap', require: false
-
 
 
 group :development, :test do
@@ -35,7 +36,6 @@ group :development do
   gem 'spring'
   gem 'rb-readline'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
   gem 'better_errors'
   gem 'foreman'
   gem 'rails_layout'

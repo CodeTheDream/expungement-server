@@ -1,0 +1,9 @@
+<div class="offenses">
+  <h1>Welcome to Expungement App!</h1><br/>
+
+    <%= image_tag("expungement.jpeg", width: "900", height: "400")%><br/>
+    <div class="links">
+    <%= link_to "Log out", destroy_admin_session_path, method: :delete %><br/>
+    <%= link_to "Upload offenses", new_offense_import_path %>
+  </div>
+</div>
