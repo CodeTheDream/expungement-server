@@ -1,23 +1,25 @@
-<h4 class='mt-4 text-center'>Import Offenses from Excel</h4>
+<div class="offenses">
+  <h4 class='mt-4 text-center'>Import Offenses from Excel</h4>
 
-<div class='card bg-light col-7 rounded mb-2 shadow mx-auto border-info'>
-  <div class='card-body'>
-    Note: The application will read your spreadsheet and attempt to find the
-    objects by their IDs. It updates the record if it finds one, else, it creates a new record if the ID does not exist.
+  <div class='card bg-light col-7 rounded mb-2 shadow mx-auto border-info'>
+    <div class='card-body'>
+      Note: The application will read your spreadsheet and attempt to find the
+      objects by their IDs. It updates the record if it finds one, else, it creates a new record if the ID does not exist.
+    </div>
+  </div><br>
+
+  <h5 class='text-center'>Select File</h5>
+  <div class='card bg-light col-7 rounded mb-2 shadow mx-auto border-info'>
+    <div class='card-body'>
+      <%= form_for @offense_import do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <%= f.file_field :file %>
+        <%= f.submit "Import File", class: "btn btn-info" %>
+      <% end %>
+    </div>
   </div>
-</div><br>
 
-<h5 class='text-center'>Select File</h5>
-<div class='card bg-light col-7 rounded mb-2 shadow mx-auto border-info'>
-  <div class='card-body'>
-    <%= form_for @offense_import do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <%= f.file_field :file %>
-      <%= f.submit "Import File", class: "btn btn-info" %>
-    <% end %>
+  <div class='text-center'>
+      <%= link_to "Back", :back, class: 'btn btn-primary mt-2' %>
   </div>
-</div>
-
-<div class='text-center'>
-    <%= link_to "Back", :back, class: 'btn btn-primary mt-2' %>
 </div>
