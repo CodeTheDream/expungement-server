@@ -1,5 +1,5 @@
 class Api::V1::OffensesController < ApplicationController
-  def search
+  def index
     offenses = Offense.all
 
     offenses = offenses.map do |offense|
