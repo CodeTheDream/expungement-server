@@ -1,5 +1,5 @@
 class Offense < ApplicationRecord
-  
+
   def new_offense_hash
     offense_hash = {}
     name = {first: self.first_name, middle: self.middle_name, last: self.last_name}
@@ -19,6 +19,7 @@ class Offense < ApplicationRecord
     offense_hash[:disposition_date] = self.disposition_date
     offense_hash[:county_disposition] = self.county_disposition
     offense_hash[:arrest_agency] = arrest_agency
+    offense_hash
   end
-  
+
 end
