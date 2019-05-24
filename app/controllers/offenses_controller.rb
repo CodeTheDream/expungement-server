@@ -5,10 +5,15 @@ class OffensesController < ApplicationController
     @offense = Offense.all
   end
   def show
-    pdf = OffensePdf.new
-    send_data pdf.render,
-    filename: "export.pdf",
-    type: 'application/pdf',
-    disposition: 'inline'
+    respond_to do | format| 
+      format.html
+      format.pdf do
+      pdf = OffensePdf.new
+        send_data pdf.render, filename: 'Offenses.pdf',
+                              type: 'application/pdf',
+                              disposition: 'inline'
+                            
+      end
+     end 
   end
 end

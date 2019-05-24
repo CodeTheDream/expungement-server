@@ -1,13 +1,6 @@
-class OffensePdf 
-#   // `include` instead of subclassing Prawn::Document
-#   // as advised by the official manual
-  include Prawn::View
-
+class OffensePdf < Prawn::Document
   def initialize
-    content
-  end
-
-  def content
-    text "Offense Outline"
+    super
+    text "Offenses"
   end
 end
