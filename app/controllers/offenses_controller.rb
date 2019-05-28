@@ -8,10 +8,11 @@ class OffensesController < ApplicationController
     respond_to do | format| 
       format.html
       format.pdf do
-      pdf = OffensePdf.new
+      pdf = OffensePdf.new(@offense)
         send_data pdf.render, filename: 'Offenses.pdf',
                               type: 'application/pdf',
                               disposition: 'inline'
+                              :rotate 
                             
       end
      end 
