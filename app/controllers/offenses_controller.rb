@@ -12,9 +12,8 @@ class OffensesController < ApplicationController
         send_data pdf.render, filename: 'Offenses.pdf',
                               type: 'application/pdf',
                               disposition: 'inline'
-                              :rotate 
                             
-      end
+       end
      end 
   end
 end
