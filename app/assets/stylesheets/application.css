@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+.offenses {
+  text-align: center;
+  background-color: #DCDCDC;
+  margin: -25px 100px 0 100px;
+  height: 600px;
+  padding-top: 15px;
+}
+
+.offenses h1{
+  padding-top: 15px;
+}
+
+.links {
+  text-align: left;
+  padding: 5px;
+}
+
+.session {
+  text-align: left;
+  padding: 10px;
+}
+
+.sign-in {
+  padding: 45px;
+}
