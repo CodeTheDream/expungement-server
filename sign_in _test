@@ -1,0 +1,12 @@
+RSpec.describle 'Sign in', :devise, js: true do
+  include Features::SessionHelpers
+scenario "Only admin users already having an account can sign in"
+  def setup
+    @admin = FactoryBot.create(:admin)
+    login_as(@admin, :scope => :admin)
+  end
+it "should sign up as a user", js: true do
+    visit '/https://expugement-server-dreamcoder001.c9users.io/admins/sign_in'
+    save_screenshot('flag1.png')
+  end
+end

@@ -17,7 +17,7 @@ gem 'roo-xls'
 gem 'turbolinks'
 gem 'bootsnap', require: false
 gem 'prawn'
-
+gem 'prawn-table'
 
 
 group :development, :test do
