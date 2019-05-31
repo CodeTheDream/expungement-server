@@ -15,7 +15,6 @@ class OffensePdf < Prawn::Document
     driver_license_no
     ssn_num
     line_items
-    
   end
   
   def pdf_starting_statement
