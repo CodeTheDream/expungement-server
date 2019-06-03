@@ -1,9 +1,11 @@
 class OffensesController < ApplicationController
-  before_action :authenticate_admin!
+  include ActionController::MimeResponds
+  # before_action :authenticate_admin!
 
   def index
     @offense = Offense.all
   end
+  
   def show
     respond_to do | format| 
       format.html

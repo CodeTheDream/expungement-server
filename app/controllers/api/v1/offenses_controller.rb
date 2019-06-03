@@ -1,7 +1,8 @@
 class Api::V1::OffensesController < ApplicationController
-  before_action :check_wild_cards
+  # before_action :check_wild_cards
   def index
-    offenses = Offense.all
+    # offenses = Offense.all
+    check_wild_cards
     unless @query.empty?
       if @first_name.present? # this is big if
         if @last_name.present?
@@ -35,6 +36,16 @@ class Api::V1::OffensesController < ApplicationController
     end
 
     render json: offenses, status: :ok
+  end
+  
+  def offenses_pdf
+    respond_to do | format| 
+      format.html
+      format.pdf do
+    pdf = OffensePdf1.new(@params)
+    send_data pdf.render, filename: 'Offenses.pdf',
+                              type: 'application/pdf',
+                              disposition: 'inline'
   end
 
   private

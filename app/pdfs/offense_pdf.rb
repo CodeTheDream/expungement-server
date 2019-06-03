@@ -83,13 +83,17 @@ class OffensePdf < Prawn::Document
          #{offense.arrest_agency_zip}"]
       end
     end
-    
-
 end
-
-
-
-
+# Class OffensePdf1 < Prawn::Documentdef 
+#   def initialize(params)
+#     @offense = Offense.all
+#   first_name
+#   end
+  
+#   def first_name
+#     text "First Name: #{@params.name.first_name}", size: 15
+  
+# end
 
 
 
