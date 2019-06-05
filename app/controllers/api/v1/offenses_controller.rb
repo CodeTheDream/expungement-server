@@ -1,4 +1,7 @@
 class Api::V1::OffensesController < ApplicationController
+   include ActionController::MimeResponds
+   skip_before_action :verify_authenticity_token  
+
   # before_action :check_wild_cards
   def index
     # offenses = Offense.all
@@ -42,10 +45,12 @@ class Api::V1::OffensesController < ApplicationController
     respond_to do | format| 
       format.html
       format.pdf do
-    pdf = OffensePdf1.new(@params)
+    pdf = OffensePdf1.new(request.parameters)
     send_data pdf.render, filename: 'Offenses.pdf',
                               type: 'application/pdf',
                               disposition: 'inline'
+      end                        
+    end                      
   end
 
   private
