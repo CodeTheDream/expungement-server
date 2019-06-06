@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
   root 'offenses#index'
-  resources :offenses, only: [:index, :new, :create, :show]
+  resources :offenses, only: [:index]
   devise_for :admin
   resources :offense_imports, only: [:new, :create]
 end
