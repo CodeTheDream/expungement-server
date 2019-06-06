@@ -4,7 +4,7 @@ class Api::V1::OffensesController < ApplicationController
 
   # before_action :check_wild_cards
   def index
-    offenses = Offense.all
+    # offenses = Offense.all
     check_wild_cards
     unless @query.empty?
       if @first_name.present? # this is big if
@@ -34,7 +34,10 @@ class Api::V1::OffensesController < ApplicationController
     end
 
     # Mapping here
-
+    offenses = offenses.map do |offense| 
+      offense.new_offense_hash
+    end
+    
     render json: offenses, status: :ok
   end
   
