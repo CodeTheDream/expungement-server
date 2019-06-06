@@ -4,7 +4,7 @@ class Api::V1::OffensesController < ApplicationController
 
   # before_action :check_wild_cards
   def index
-    # offenses = Offense.all
+    offenses = Offense.all
     check_wild_cards
     unless @query.empty?
       if @first_name.present? # this is big if
